@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Registrar animales{% endblock %}
+{% block head %}
+{{super()}}
+
+{% endblock %}
+{% block body %}
+
+<div  class="contenedor__animal"> 
+    <div class="caja__trasera_reganimal">
+        <form action="" method="POST">
+        <h2 id="titu">Registrar animal</h2>
+        <div id="registro">
+            <label id='color' for='nombre'>Nombre:</label>
+            <input type="text" id="nombre_mascota" name="nombre_mascota" placeholder="Nombre del animal">    
+        </div>
+        <div id="registro">
+            <label id='color' for='Animales'>Animales</label>
+                <select id='animales' name='animales' >
+                    <option value="perro" selected>Perro</option>
+                    <option value="gato">Gato</option>
+                </select>   
+        </div>
+        <input id="registro" type="submit" name="enviar" value="Registrar">
+        
+        
+        </form>
+    </div>
+
+</div>
+
+    
+{% endblock %}
+{% block footer %}
+
+{% endblock %}

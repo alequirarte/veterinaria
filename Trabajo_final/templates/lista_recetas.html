@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Lista recetas {% endblock %}
+{% block head %}
+{{super()}}
+
+{% endblock %}
+{% block body %}
+
+
+
+<div class="contenedor__animal">
+    
+    <div  class="caja__trasera_mascotas"> 
+        <h2 id="titu"> Recetas del usuario </h2>  
+
+        
+        <div>
+            <table>
+                
+                <tr>
+
+                    <th> MASCOTA </th>
+                    <th > ACCIÓN </th>
+                    <th > INFORMACIÓN</th>
+                   
+                </tr>
+               
+                <tr>
+
+                    {% for id,diccionario in dicc_citas.items() %} 
+                    {% if diccionario['usuario'] == session['usuario']  %}
+                      <th>{{diccionario['mascota']}} </th>
+                
+                      <th>{{diccionario['atencion']}}</th>
+                      <th> {{diccionario['datos']}} </th>
+                      
+                
+                  </tr>
+
+                     {% endif %}
+            
+                              
+              
+                     {% endfor %}
+              </table>
+           
+
+        </div>
+
+       
+
+
+
+
+    </div>
+</div>
+
+
+        
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

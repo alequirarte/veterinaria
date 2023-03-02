@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Lista mascotas {% endblock %}
+{% block head %}
+{{super()}}
+
+{% endblock %}
+{% block body %}
+
+
+
+<div class="contenedoranimal">
+
+    <div  class="cajatrasera_mascotas"> 
+        <h2 id="titu"> Citas por atender</h2>
+
+        <div>
+            <table>
+                <tr>
+                    <th> ID </th>
+                    <th scope="col"> MASCOTA </th>
+                    <th scope="col"> ACCION </th>
+                    <th scope="col"> FECHA</th>
+                    <th>COMPLETADA</th>
+                </tr>
+                {% for id,diccionario in dicc_citas.items() %} 
+
+                 <tr>
+
+
+
+                  <form action="" method="POST">
+                    <th> <input type="text" id="id" value="{{id}}" name="id" readonly>  </label>  </th>
+                    <th>{{diccionario['mascota']}} </th>
+
+                    <th>{{diccionario['atencion']}}</th>
+                    <th> {{diccionario['fecha']}} </th>
+
+                    <th> <input type="checkbox" id="cita" value="cita" name="cita"> Cita completa </label> </th>
+
+
+                </tr>
+
+                {% endfor %}
+              </table>
+              <input id="registro" type="submit" name="enviar" value="Entrar">
+            </form> 
+
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block title %}Registrarse{% endblock %}
+{% block head %}
+{{super()}}
+
+{% endblock %}
+{% block body %}
+
+<div>
+    <h2 id="titulo">RECETA</h2>
+    <form action="" method="POST">
+        
+        {% for id,diccionario in dic_receta.items() %} 
+        <div id="registro">
+            {% if diccionario['mascota'] != ''%}
+            <label>Mascota:</label>
+            {{diccionario['mascota']}}
+             
+        </div>
+        <div id="registro">
+            <label>Atencion:</label>
+            {{diccionario['atencion']}}
+
+            {% endif %}
+
+             
+        </div>
+
+        
+        {% endfor %}
+        <div id="registro">
+            <label >Detalles medicos:</label>
+            <input type="text" id="detalles" name="detalles" placeholder="Detalles medicos">  
+        </div>
+      
+            <input id="registro" type="submit" name="enviar" value="Entrar">
+        
+        
+    </form>
+
+</div>
+
+    
+{% endblock %}
+

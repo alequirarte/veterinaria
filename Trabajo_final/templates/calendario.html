@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} Citas {% endblock %}
+{% block head %}
+{{super()}}
+{% endblock %}
+{% block body %}
+
+
+<div class="contenedor__animal">
+    
+    <div  class="caja__trasera_reganimal"> 
+
+         
+
+       
+
+            <form action="" method="POST">
+                <h1 id="titu"> Agendar cita   </h1>
+                <div id="registro">
+                    <h2 id="color"> Mascota por atender:  </h2>
+                    <select name="mascota" id="mascota">
+                        <option value="None" selected="selected" hidden="hidden">Elige la mascota</option>
+                        {% for usuario,diccionario in dicc_animales.items() %}
+                        {% if diccionario['usuario'] == session['usuario'] %}
+                        <option value="{{diccionario['nombre_mascota']}}"> {{diccionario['nombre_mascota']}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+                <div id="registro">
+                    <h2 id="color">  Atención a tomar:  </h2>
+                    <select name="accion" id = "accion">
+                        <option value="" selected="selected" hidden="hidden">Elige una opcion</option>
+                        {% for accion in lista %}
+                                <option value="{{accion}}">{{accion}} </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div id="registro">
+                    <h2 id="color"> Fecha de cita:</h2>
+                    <input type="date" name="fecha" id = "fecha"
+                    value={{hoy}}
+                    min={{hoy}} max="2022-12-31">
+                </div>
+                        
+                <input id="registro" type="submit" name="enviar" value="Entrar">
+        </form>   
+        
+    </div>
+</div>
+
+        
+{% endblock %}
+{% block footer %}
+
+{% endblock %}
